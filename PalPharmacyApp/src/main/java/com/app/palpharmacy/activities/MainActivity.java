@@ -96,7 +96,7 @@ searchinput.addTextChangedListener(new TextWatcher() {
 
     @Override
     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-myadapter.getFilter().filter(charSequence);
+    myadapter.getFilter().filter(charSequence);
     }
 
     @Override
