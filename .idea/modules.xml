@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MyApplication5-master.iml" filepath="$PROJECT_DIR$/MyApplication5-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/MyApplication5-master-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/MyApplication5-master-PalPharmacyApp.iml" group="MyApplication5-master/PalPharmacyApp" />
       <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/PalPharmacyApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudioProjects-MyApplication5-master.iml" filepath="$PROJECT_DIR$/StudioProjects-MyApplication5-master.iml" group="MyApplication5-master" />
     </modules>
   </component>
 </project>

@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,22 +18,23 @@ import com.app.palpharmacy.model.Pharmacy;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Aws on 11/03/2018.
- */
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> implements Filterable {
 
     RequestOptions option;
     private Context mContext;
     private List<Pharmacy> mData;
 
+    private List<Pharmacy> mDatafiltered;
 
     public RecyclerViewAdapter(Context mContext, List<Pharmacy> mData) {
         this.mContext = mContext;
         this.mData = mData;
+        this.mDatafiltered=mData;
 
         // Request option for Glide
         option = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);
@@ -70,10 +73,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        holder.tv_name.setText(mData.get(position).getName());
-        holder.tv_rating.setText(mData.get(position).getRating());
-        holder.tv_studio.setText(mData.get(position).getStudio());
-        holder.tv_category.setText(mData.get(position).getCategorie());
+        holder.tv_name.setText(mDatafiltered.get(position).getName());
+        holder.tv_rating.setText(mDatafiltered.get(position).getRating());
+        holder.tv_studio.setText(mDatafiltered.get(position).getStudio());
+        holder.tv_category.setText(mDatafiltered.get(position).getCategorie());
 
         // Load Image from the internet and set it into Imageview using Glide
 
@@ -84,7 +87,41 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return mData.size();
+        return mDatafiltered.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String Key= constraint.toString();
+                if(Key.isEmpty()) {
+                    mDatafiltered= mData;
+                }
+                else{
+                    List<Pharmacy> lstfiltered = new ArrayList<>();
+                    for(Pharmacy row : mData) {
+                        if (row.getName().toLowerCase().contains(Key.toLowerCase())) {
+                            lstfiltered.add(row);
+                        }
+                    }
+                    mDatafiltered= lstfiltered;
+                }
+                FilterResults filterResults = new FilterResults();
+                filterResults.values=mDatafiltered;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence charSequence, FilterResults results) {
+                mDatafiltered = (List<Pharmacy>) results.values;
+                notifyDataSetChanged();
+
+
+
+            }
+        };
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {

@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -30,10 +33,13 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView ;
 
 
+    RecyclerViewAdapter myadapter;
+EditText searchinput;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        searchinput= findViewById(R.id.edittext);
 
         lstPharmacy = new ArrayList<>() ;
         recyclerView = findViewById(R.id.recyclerviewid);
@@ -82,7 +88,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+searchinput.addTextChangedListener(new TextWatcher() {
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+    }
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+myadapter.getFilter().filter(charSequence);
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+
+    }
+});
 
         requestQueue = Volley.newRequestQueue(MainActivity.this);
         requestQueue.add(request) ;
@@ -93,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     private void setuprecyclerview(List<Pharmacy> lstPharmacy) {
 
 
-        RecyclerViewAdapter myadapter = new RecyclerViewAdapter(this, lstPharmacy) ;
+        myadapter = new RecyclerViewAdapter(this, lstPharmacy) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myadapter);
 
