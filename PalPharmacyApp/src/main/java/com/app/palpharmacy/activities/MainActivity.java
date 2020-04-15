@@ -164,6 +164,9 @@ searchinput.addTextChangedListener(new TextWatcher() {
             case R.id.nav_location:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new locationfragment()).commit();
                 break;
+            /*case R.id.nav_home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new locationfragment()).commit();
+                break;*/
             case R.id.nav_share:
                 Toast.makeText(this,"Share",Toast.LENGTH_SHORT).show();
                 break;
