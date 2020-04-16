@@ -3,4 +3,11 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">close navigation drawer</string>
 
+
+    <string-array name="location">
+        <item>beitjala</item>
+        <item>bwthlwhwm</item>
+        <item>beitsahour</item>
+
+    </string-array>
 </resources>

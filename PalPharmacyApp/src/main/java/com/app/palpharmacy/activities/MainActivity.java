@@ -1,5 +1,7 @@
 package com.app.palpharmacy.activities;
 
+import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,7 +18,9 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -36,7 +40,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+private static int splashtime= 4000;
     private final String JSON_URL = "http://www.palpharmacy.com/index.php/getPharmacies" ;
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
@@ -50,6 +54,7 @@ EditText searchinput;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar= findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawer= findViewById(R.id.draw_layout);
@@ -164,9 +169,9 @@ searchinput.addTextChangedListener(new TextWatcher() {
             case R.id.nav_location:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new locationfragment()).commit();
                 break;
-            /*case R.id.nav_home:
+            case R.id.nav_home:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new locationfragment()).commit();
-                break;*/
+                break;
             case R.id.nav_share:
                 Toast.makeText(this,"Share",Toast.LENGTH_SHORT).show();
                 break;
