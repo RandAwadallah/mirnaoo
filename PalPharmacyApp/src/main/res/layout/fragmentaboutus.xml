@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorGrey">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We are here to help you find the opened pharmacist which are near you,all you have to do is specify your location "
+        android:textColor="#1E2BAC"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:textStyle="italic"
+        android:layout_marginTop="300dp"/>
+</RelativeLayout>
