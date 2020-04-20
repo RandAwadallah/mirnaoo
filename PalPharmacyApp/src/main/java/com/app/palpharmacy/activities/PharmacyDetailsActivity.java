@@ -12,12 +12,13 @@ import com.app.palpharmacy.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
-public class PharmacyDetailsActivity extends AppCompatActivity {
+public class PharmacyDetailsActivity extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anime);
+
 
         // hide the default actionbar
         getSupportActionBar().hide();

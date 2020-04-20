@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.app.palpharmacy.activities.MainActivity"
-    android:background="@color/colorWhite">
+    android:background="@color/colorGrey">
 
     <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"
@@ -37,22 +37,24 @@
                     android:id="@+id/edittext"
                     android:layout_width="380dp"
                     android:layout_height="45dp"
-                    android:layout_marginStart="22dp"
-                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="18dp"
+                    android:ems="10"
+                    android:layout_marginLeft="16dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="22dp"
+                    android:layout_marginRight="24dp"
                     android:background="@drawable/search_style"
                     android:drawableLeft="@drawable/ic_search_black_24dp"
                     android:drawablePadding="8dp"
                     android:hint="Type here to search"
+                    android:inputType="text"
                     android:textColor="@color/colorPrimary"
-                    tools:ignore="MissingConstraints" />
+                    />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerviewid"
                     android:layout_width="match_parent"
-                    android:layout_height="606dp"
+                    android:layout_height="633dp"
                     android:layout_marginTop="55dp"
                     tools:ignore="MissingConstraints">
 

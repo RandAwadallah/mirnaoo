@@ -18,6 +18,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -47,14 +48,14 @@ private static int splashtime= 4000;
     private List<Pharmacy> lstPharmacy;
     private RecyclerView recyclerView ;
 
-private DrawerLayout drawer;
+   private DrawerLayout drawer;
     RecyclerViewAdapter myadapter;
-EditText searchinput;
+     EditText searchinput;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        searchinput= findViewById(R.id.edittext);
         Toolbar toolbar= findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawer= findViewById(R.id.draw_layout);
@@ -63,7 +64,7 @@ EditText searchinput;
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
 drawer.addDrawerListener(toggle);
 toggle.syncState();
-searchinput= findViewById(R.id.edittext);
+
 
         lstPharmacy = new ArrayList<>() ;
         recyclerView = findViewById(R.id.recyclerviewid);
@@ -76,11 +77,8 @@ searchinput= findViewById(R.id.edittext);
 
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+   Intent intent = new Intent(this,MainActivity.class);
+   startActivity(intent);
     }
 
     private void jsonrequest() {
@@ -122,6 +120,7 @@ searchinput= findViewById(R.id.edittext);
 
             }
         });
+
 searchinput.addTextChangedListener(new TextWatcher() {
     @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -169,12 +168,8 @@ searchinput.addTextChangedListener(new TextWatcher() {
             case R.id.nav_location:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new locationfragment()).commit();
                 break;
-            case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new locationfragment()).commit();
-                break;
-            case R.id.nav_share:
-                Toast.makeText(this,"Share",Toast.LENGTH_SHORT).show();
-                break;
+
+
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
