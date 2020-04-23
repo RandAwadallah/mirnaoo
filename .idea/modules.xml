@@ -8,6 +8,8 @@
       <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/MyApplication5-master-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/MyApplication5-master-PalPharmacyApp.iml" group="MyApplication5-master/PalPharmacyApp" />
       <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/PalPharmacyApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/StudioProjects-MyApplication5-master.iml" filepath="$PROJECT_DIR$/StudioProjects-MyApplication5-master.iml" group="MyApplication5-master" />
+      <module fileurl="file://$PROJECT_DIR$/ourseminar.iml" filepath="$PROJECT_DIR$/ourseminar.iml" group="ourseminar" />
+      <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/ourseminar-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/ourseminar-PalPharmacyApp.iml" group="ourseminar/PalPharmacyApp" />
     </modules>
   </component>
 </project>
