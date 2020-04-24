@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-ourseminar.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-ourseminar.iml" group="ourseminar" />
+      <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/AndroidStudioProjects-ourseminar-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/AndroidStudioProjects-ourseminar-PalPharmacyApp.iml" group="ourseminar/PalPharmacyApp" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication5-m.iml" filepath="$PROJECT_DIR$/MyApplication5-m.iml" group="MyApplication5-m" />
       <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/MyApplication5-m-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/MyApplication5-m-PalPharmacyApp.iml" group="MyApplication5-m/PalPharmacyApp" />
       <module fileurl="file://$PROJECT_DIR$/MyApplication5-master.iml" filepath="$PROJECT_DIR$/MyApplication5-master.iml" />

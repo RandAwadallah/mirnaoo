@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.app.palpharmacy.activities.MainActivity"
-    android:background="@color/colorGrey">
+    android:background="@color/colorGrey"
+    android:id="@+id/root_layout">
 
     <android.support.v4.widget.DrawerLayout
         android:layout_width="match_parent"
@@ -58,9 +59,12 @@
                     android:layout_marginTop="55dp"
                     tools:ignore="MissingConstraints">
 
+
+
                 </android.support.v7.widget.RecyclerView>
 
             </FrameLayout>
+
 
 
          </LinearLayout>
@@ -74,4 +78,15 @@
              app:menu="@menu/drawer_menu"/>
 
     </android.support.v4.widget.DrawerLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_switcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_brightness_2_white_24dp"/>
+
 </android.support.constraint.ConstraintLayout>

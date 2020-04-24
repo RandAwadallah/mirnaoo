@@ -1,8 +1,11 @@
 package com.app.palpharmacy.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -18,6 +21,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -47,14 +51,24 @@ private static int splashtime= 4000;
     private RequestQueue requestQueue ;
     private List<Pharmacy> lstPharmacy;
     private RecyclerView recyclerView ;
+    FloatingActionButton fabSwitcher;
+    boolean isDark = false;
+    ConstraintLayout rootLayout;
+    List<Pharmacy> mData;
 
-   private DrawerLayout drawer;
+
+    private DrawerLayout drawer;
     RecyclerViewAdapter myadapter;
      EditText searchinput;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // ini view
+        fabSwitcher = findViewById(R.id.fab_switcher);
+        rootLayout = findViewById(R.id.root_layout);
+
         searchinput= findViewById(R.id.edittext);
         Toolbar toolbar= findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -118,6 +132,7 @@ toggle.syncState();
             @Override
             public void onErrorResponse(VolleyError error) {
 
+
             }
         });
 
@@ -147,9 +162,45 @@ searchinput.addTextChangedListener(new TextWatcher() {
     private void setuprecyclerview(List<Pharmacy> lstPharmacy) {
 
 
-        myadapter = new RecyclerViewAdapter(this, lstPharmacy) ;
+     myadapter = new RecyclerViewAdapter(this, lstPharmacy) ;
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myadapter);
+        fabSwitcher.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View view) {
+                isDark = !isDark ;
+                if (isDark) {
+
+                    rootLayout.setBackgroundColor(getResources().getColor(R.color.black));
+                }
+                else {
+                    rootLayout.setBackgroundColor(getResources().getColor(R.color.white));
+                }
+             //   myadapter = new RecyclerViewAdapter(getApplicationContext(),mData,isDark);
+                recyclerView.setAdapter(myadapter);
+                saveThemeStatePref(isDark);
+
+
+            }
+
+            private void saveThemeStatePref(boolean isDark) {
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("myPref",MODE_PRIVATE);
+                SharedPreferences.Editor editor = pref.edit();
+                editor.putBoolean("isDark",isDark);
+                editor.commit();
+            }
+            private boolean getThemeStatePref () {
+
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("myPref",MODE_PRIVATE);
+                boolean isDark = pref.getBoolean("isDark",false) ;
+                return isDark; }
+
+        });
+
+
 
     }
 
@@ -173,5 +224,10 @@ searchinput.addTextChangedListener(new TextWatcher() {
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-}
+
+
+            }
+
+            }
+
+

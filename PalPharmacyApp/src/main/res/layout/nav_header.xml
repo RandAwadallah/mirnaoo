@@ -9,18 +9,20 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     >
 
-    
+
  <ImageView
         android:layout_width="91dp"
-        android:layout_height="98dp"
-        android:src="@drawable/download"
-     android:background="@color/colorPrimary"/>
+        android:layout_height="89dp"
+
+    />
 
     <TextView
-        android:layout_width="110dp"
+        android:layout_width="173dp"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
         android:text="Pal-Pharmacy"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/colorPrimary"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textSize="25dp"
+        android:textStyle="bold|italic" />
 </LinearLayout>
