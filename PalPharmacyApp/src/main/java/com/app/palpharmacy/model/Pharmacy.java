@@ -28,7 +28,8 @@ public class Pharmacy {
     }
 
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 

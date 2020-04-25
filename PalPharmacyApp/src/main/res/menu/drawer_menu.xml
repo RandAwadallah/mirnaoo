@@ -11,8 +11,8 @@
 
     <item
         android:id="@+id/nav_language"
-        android:icon="@drawable/ic_language"
-        android:title="Language" />
+        android:icon="@drawable/ic_airplay_black_24dp"
+        android:title="Advertisments" />
 
     <item
         android:id="@+id/nav_notification"
@@ -22,13 +22,13 @@
 
 </group>
     <item android:id="@+id/nav_location"
-        android:title="My Location">
+        android:title="Location">
         <menu>
 
             <item
                 android:icon="@drawable/ic_location_on"
-                android:title="Location"/>
-        </menu>
+                android:title="My Location"/>
+        </menu>1
     </item>
 
 </menu>
