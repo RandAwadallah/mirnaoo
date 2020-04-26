@@ -112,6 +112,8 @@ toggle.syncState();
                         Pharmacy pharmacy = new Pharmacy() ;
                         pharmacy.setName(jsonObject.getString("name_en"));
                         pharmacy.setDescription(jsonObject.getString("address"));
+                        pharmacy.setCity(jsonObject.getString("city_id"));
+
 //                        pharmacy.setRating(jsonObject.getString("Rating"));
 //                        pharmacy.setCategorie(jsonObject.getString("categorie"));
 //                        pharmacy.setNb_episode(jsonObject.getInt("episode"));

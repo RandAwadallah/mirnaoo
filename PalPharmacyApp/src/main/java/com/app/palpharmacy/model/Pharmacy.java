@@ -13,11 +13,11 @@ public class Pharmacy {
     private String categorie;
     private String studio;
     private String image_url;
-
+    private String city;
     public Pharmacy() {
     }
 
-    public Pharmacy(String name, String description, String rating, int nb_episode, String categorie, String studio, String image_url) {
+    public Pharmacy(String name, String description, String city ,String rating, int nb_episode, String categorie, String studio, String image_url) {
         this.name = name;
         Description = description;
         this.rating = rating;
@@ -25,6 +25,8 @@ public class Pharmacy {
         this.categorie = categorie;
         this.studio = studio;
         this.image_url = image_url;
+        this.city = city;
+
     }
 
 
@@ -45,13 +47,14 @@ public class Pharmacy {
         Description = description;
     }
 
-    public String getRating() {
-        return rating;
+    public String getCity() {
+        return city;
     }
 
-    public void setRating(String rating) {
-        this.rating = rating;
+    public void setCity(String city) {
+        this.city = city;
     }
+
 
     public int getNb_episode() {
         return nb_episode;

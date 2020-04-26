@@ -55,10 +55,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 Intent i = new Intent(mContext, PharmacyDetailsActivity.class);
                 i.putExtra("anime_name", mData.get(viewHolder.getAdapterPosition()).getName());
                 i.putExtra("anime_description", mData.get(viewHolder.getAdapterPosition()).getDescription());
-                i.putExtra("anime_studio", mData.get(viewHolder.getAdapterPosition()).getStudio());
-                i.putExtra("anime_category", mData.get(viewHolder.getAdapterPosition()).getCategorie());
+               // i.putExtra("anime_studio", mData.get(viewHolder.getAdapterPosition()).getStudio());
+                i.putExtra("anime_city", mData.get(viewHolder.getAdapterPosition()).getCity());
                 i.putExtra("anime_nb_episode", mData.get(viewHolder.getAdapterPosition()).getNb_episode());
-                i.putExtra("anime_rating", mData.get(viewHolder.getAdapterPosition()).getRating());
+             //   i.putExtra("anime_rating", mData.get(viewHolder.getAdapterPosition()).getRating());
                 i.putExtra("anime_img", mData.get(viewHolder.getAdapterPosition()).getImage_url());
 
                 mContext.startActivity(i);
@@ -74,9 +74,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
         holder.tv_name.setText(mDatafiltered.get(position).getName());
-        holder.tv_rating.setText(mDatafiltered.get(position).getRating());
-        holder.tv_studio.setText(mDatafiltered.get(position).getStudio());
-        holder.tv_category.setText(mDatafiltered.get(position).getCategorie());
+        holder.tv_city.setText(mDatafiltered.get(position).getCity());
+
+       // holder.tv_rating.setText(mDatafiltered.get(position).getRating());
+     //   holder.tv_studio.setText(mDatafiltered.get(position).getStudio());
+      //  holder.tv_category.setText(mDatafiltered.get(position).getCategorie());
 
         // Load Image from the internet and set it into Imageview using Glide
 
@@ -127,10 +129,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_name;
-        TextView tv_rating;
-        TextView tv_studio;
-        TextView tv_category;
+      //  TextView tv_rating;
+       // TextView tv_studio;
+       // TextView tv_category;
         ImageView img_thumbnail;
+        TextView tv_city;
         LinearLayout view_container;
 
 
@@ -139,9 +142,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             view_container = itemView.findViewById(R.id.container);
             tv_name = itemView.findViewById(R.id.anime_name);
-            tv_category = itemView.findViewById(R.id.categorie);
-            tv_rating = itemView.findViewById(R.id.rating);
-            tv_studio = itemView.findViewById(R.id.studio);
+            tv_city = itemView.findViewById(R.id.city);
+        //    tv_rating = itemView.findViewById(R.id.rating);
+           // tv_studio = itemView.findViewById(R.id.studio);
             img_thumbnail = itemView.findViewById(R.id.thumbnail);
 
         }

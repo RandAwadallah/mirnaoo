@@ -36,36 +36,43 @@
             android:textColor="@color/colorBlue"
             android:textSize="18sp"
             android:textStyle="bold" />
-
         <TextView
-            android:id="@+id/categorie"
+            android:id="@+id/city"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Category"
+            android:text="City"
             android:textColor="@color/colorGrey1" />
 
+<!--        <TextView-->
+<!--            android:id="@+id/categorie"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:text="Category"-->
+<!--            android:textColor="@color/colorGrey1" />-->
 
-        <TextView
-            android:id="@+id/rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rating_background"
-            android:drawableLeft="@drawable/ic_star_black_24dp"
-            android:paddingRight="5dp"
-            android:text="0.0"
-            android:textColor="#fff"
-            android:textSize="15sp"
-            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/studio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Studio"
-            android:textColor="@color/colorGrey1" />
+<!--        <TextView-->
+<!--            android:id="@+id/rating"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/rating_background"-->
+<!--            android:drawableLeft="@drawable/ic_star_black_24dp"-->
+<!--            android:paddingRight="5dp"-->
+<!--            android:text="0.0"-->
+<!--            android:textColor="#fff"-->
+<!--            android:textSize="15sp"-->
+<!--            android:textStyle="bold" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/studio"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="5dp"-->
+<!--            android:text="Studio"-->
+<!--            android:textColor="@color/colorGrey1" />-->
 
 
     </LinearLayout>

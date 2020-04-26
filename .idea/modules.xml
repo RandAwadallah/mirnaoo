@@ -14,6 +14,8 @@
       <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/oursem-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/oursem-PalPharmacyApp.iml" group="oursem/PalPharmacyApp" />
       <module fileurl="file://$PROJECT_DIR$/ourseminar.iml" filepath="$PROJECT_DIR$/ourseminar.iml" group="ourseminar" />
       <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/ourseminar-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/ourseminar-PalPharmacyApp.iml" group="ourseminar/PalPharmacyApp" />
+      <module fileurl="file://$PROJECT_DIR$/ourseminarr.iml" filepath="$PROJECT_DIR$/ourseminarr.iml" group="ourseminarr" />
+      <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/ourseminarr-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/ourseminarr-PalPharmacyApp.iml" group="ourseminarr/PalPharmacyApp" />
     </modules>
   </component>
 </project>
