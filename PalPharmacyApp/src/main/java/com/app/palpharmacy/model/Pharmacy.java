@@ -1,8 +1,6 @@
 package com.app.palpharmacy.model;
 
-/**
- * Created by Aws on 11/03/2018.
- */
+
 
 public class Pharmacy {
 

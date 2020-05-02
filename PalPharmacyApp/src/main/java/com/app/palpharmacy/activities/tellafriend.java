@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 import com.app.palpharmacy.R;
 
-public class aboutusfragment extends Fragment {
+public class tellafriend extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragmentaboutus,container,false);
+        return inflater.inflate(R.layout.tellafriend,container,false);
     }
 }

@@ -28,7 +28,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     RequestOptions option;
     private Context mContext;
     private List<Pharmacy> mData;
-
     private List<Pharmacy> mDatafiltered;
 
     public RecyclerViewAdapter(Context mContext, List<Pharmacy> mData) {
@@ -143,7 +142,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             view_container = itemView.findViewById(R.id.container);
             tv_name = itemView.findViewById(R.id.anime_name);
             tv_city = itemView.findViewById(R.id.city);
-        //    tv_rating = itemView.findViewById(R.id.rating);
+        // tv_rating = itemView.findViewById(R.id.rating);
            // tv_studio = itemView.findViewById(R.id.studio);
             img_thumbnail = itemView.findViewById(R.id.thumbnail);
 

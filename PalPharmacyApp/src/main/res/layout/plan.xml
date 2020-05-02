@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    >
+
+    <TextView
+        android:layout_width="400dp"
+        android:layout_height="351dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="200dp"
+        android:gravity="center|center_vertical"
+        android:text="We always care for your satisfaction and because of that we keep growing everyday, Therefore we will show you the categories that every pharmacy has and you can choose your favourite pharmacy so you will recieve the latest categories  the pharmacist addd "
+        android:textColor="#000000"
+        android:textSize="24dp" />
+
+
+
+</RelativeLayout>

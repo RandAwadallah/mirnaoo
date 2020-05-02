@@ -12,23 +12,24 @@
     <item
         android:id="@+id/nav_language"
         android:icon="@drawable/ic_airplay_black_24dp"
-        android:title="Advertisments" />
+        android:title="Ads" />
 
     <item
         android:id="@+id/nav_notification"
-        android:icon="@drawable/ic_notifications"
-        android:title="Notification" />
+        android:icon="@drawable/ic_announcement_black_24dp"
+
+        android:title="Tell a friend" />
+
+
+
+
+            <item
+                android:id="@+id/nav_plan"
+                android:icon="@drawable/ic_plan_black_24dp"
+                android:title="Future plan "/>
 
 
 </group>
-    <item android:id="@+id/nav_location"
-        android:title="Location">
-        <menu>
 
-            <item
-                android:icon="@drawable/ic_location_on"
-                android:title="My Location"/>
-        </menu>1
-    </item>
 
 </menu>

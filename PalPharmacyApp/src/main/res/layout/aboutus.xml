@@ -14,14 +14,9 @@
         android:src="@drawable/about" />
 
     <TextView
-
+android:id="@+id/textaboutus"
         android:layout_width="match_parent"
         android:layout_height="478dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
         android:layout_marginTop="150dp"
@@ -32,7 +27,9 @@
         android:text="Pal-Pharmacy is a complete system that helps pharmacists to promote for their pharmacy while providing the customers an easy and effective way to look for the nearest pharmacy based on their current location."
         android:textColor="@color/black"
         android:textSize="24dp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+
+        />
 
 
 </RelativeLayout>
