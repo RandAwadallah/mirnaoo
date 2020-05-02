@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -28,11 +29,20 @@ public class PharmacyDetailsActivity extends AppCompatActivity {
     private static final int Request_Call=1;
     private TextView calltext;
     private Button callbutton;
-@Override
+    private Button mapbutton;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_anime);
 
+
+        mapbutton=findViewById(R.id.buttonmap);
+mapbutton.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        openactivity();
+    }
+});
 calltext= findViewById(R.id.aa_phone_number);
 callbutton=findViewById(R.id.phonebtn);
 callbutton.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +56,6 @@ callbutton.setOnClickListener(new View.OnClickListener() {
 
         // Recieve data
 
-        // String name = getIntent().getExtras().getString("anime_name");
         //String description = getIntent().getExtras().getString("anime_description");
         String studio = getIntent().getExtras().getString("aa_phone_number");
         String category = getIntent().getExtras().getString("anime_name");
@@ -87,8 +96,6 @@ callbutton.setOnClickListener(new View.OnClickListener() {
         tv_description.setText(description);
 
         collapsingToolbarLayout.setTitle(name);
-
-
         RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);
 
 
@@ -119,6 +126,10 @@ callbutton.setOnClickListener(new View.OnClickListener() {
 
             }
         }
+    }
+    public void openactivity(){
+    Intent intent = new Intent(this,map.class);
+    startActivity(intent);
     }
 
 }

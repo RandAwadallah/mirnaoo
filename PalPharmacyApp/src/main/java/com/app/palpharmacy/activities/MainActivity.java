@@ -1,6 +1,7 @@
 package com.app.palpharmacy.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +15,11 @@ import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -40,29 +43,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RequestQueue requestQueue;
     private List<Pharmacy> lstPharmacy;
     private RecyclerView recyclerView;
+    Button buttonSend;
     List<Pharmacy> mData;
-    private EditText mEditTextTo;
-    private EditText mEditTextSubject;
-    private EditText mEditTextMessage;
-
     private DrawerLayout drawer;
     RecyclerViewAdapter myadapter;
     EditText searchinput;
-
+    private EditText mEditTextTo;
+    private EditText mEditTextSubject;
+    private EditText mEditTextMessage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mEditTextTo = findViewById(R.id.edit_text_to);
-        mEditTextMessage = findViewById(R.id.edit_text_message);
-
-        Button buttonSend = findViewById(R.id.button_send);
-//     buttonSend.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                sendMail();
-//            }
-//        });
         // ini view
         searchinput = findViewById(R.id.edittext);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -192,6 +184,8 @@ pharmacy.setStudio(jsonObject.getString("closing_time"));
 
 
     }
+
+
     private void sendMail() {
         String recipientList = mEditTextTo.getText().toString();
         String[] recipients = recipientList.split(",");
@@ -205,9 +199,13 @@ pharmacy.setStudio(jsonObject.getString("closing_time"));
         intent.putExtra(Intent.EXTRA_TEXT, message);
 
         intent.setType("message/rfc822");
-        startActivity(Intent.createChooser(intent, "Choose an email client"));
+    startActivity(Intent.createChooser(intent, "Choose an email client"));
     }
 
+    public void viewdata(View view) {
+        sendMail();
+        Toast.makeText(this,"buttonclick",Toast.LENGTH_SHORT).show();
+    }
 }
 
 

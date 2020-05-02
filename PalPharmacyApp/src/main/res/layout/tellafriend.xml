@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/colorWhite"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.MainActivity"
+    android:background="@color/colorWhite">
 
     <TextView
         android:layout_width="match_parent"
@@ -22,8 +22,6 @@
         android:inputType="textEmailAddress" />
 
 
-
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,18 +31,20 @@
     <EditText
         android:id="@+id/edit_text_message"
         android:layout_width="match_parent"
+        android:autoLink="web"
+        android:clickable="true"
+        android:text="Check out the website http://www.palpharmacy.com/"
         android:layout_height="wrap_content"
         android:gravity="start|top"
         android:lines="10" />
 
     <Button
         android:id="@+id/button_send"
-        android:layout_width="184dp"
-        android:layout_height="58dp"
-        android:layout_marginLeft="90dp"
-        android:background="@color/colorGrey"
-        android:layout_marginTop="50dp"
-
-        android:text="Send" />
+        android:layout_width="206dp"
+        android:layout_marginLeft="70dp"
+        android:layout_height="wrap_content"
+        android:onClick="viewdata"
+        android:text="send"
+        />
 
 </LinearLayout>
