@@ -6,28 +6,36 @@ public class Pharmacy {
 
     private String name;
     private String Description;
-    private String rating;
-    private int nb_episode;
-    private String categorie;
-    private String studio;
+    private String vacation;
+    private String region;
+    private String opening;
+    private String closing;
+    private String phonenumer;
     private String image_url;
     private String city;
     public Pharmacy() {
     }
 
-    public Pharmacy(String name, String description, String city ,String rating, int nb_episode, String categorie, String studio, String image_url) {
+    public Pharmacy(String name, String description, String city ,String opening,String region, String closing, String phone,String vacation, String image_url) {
         this.name = name;
         Description = description;
-        this.rating = rating;
-        this.nb_episode = nb_episode;
-        this.categorie = categorie;
-        this.studio = studio;
+        this.region = region;
+        this.opening = opening;
+        this.closing = closing;
+        this.phonenumer = phone;
         this.image_url = image_url;
         this.city = city;
+        this.vacation=vacation;
 
     }
 
+    public String getVacation() {
+        return vacation;
+    }
 
+    public void setVacation(String vacation) {
+        this.vacation = vacation;
+    }
     public String getName()
     {
         return name;
@@ -54,28 +62,28 @@ public class Pharmacy {
     }
 
 
-    public int getNb_episode() {
-        return nb_episode;
+    public String getOpening() {
+        return opening;
     }
 
-    public void setNb_episode(int nb_episode) {
-        this.nb_episode = nb_episode;
+    public void setOpening(String opening) {
+        this.opening=opening;
     }
 
-    public String getCategorie() {
-        return categorie;
+    public String getClosing() {
+        return closing;
     }
 
-    public void setCategorie(String categorie) {
-        this.categorie = categorie;
+    public void setClosing(String closing) {
+        this.closing = closing;
     }
 
-    public String getStudio() {
-        return studio;
+    public String getPhonenumer() {
+        return phonenumer;
     }
 
-    public void setStudio(String studio) {
-        this.studio = studio;
+    public void setPhonenumer(String phonenumer) {
+        this.phonenumer = phonenumer;
     }
 
     public String getImage_url() {
@@ -84,5 +92,12 @@ public class Pharmacy {
 
     public void setImage_url(String image_url) {
         this.image_url = image_url;
+    }
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 }

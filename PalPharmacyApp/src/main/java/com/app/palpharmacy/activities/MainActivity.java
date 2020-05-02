@@ -1,7 +1,6 @@
 package com.app.palpharmacy.activities;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -98,12 +97,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         pharmacy.setName(jsonObject.getString("pharmacy_name_en"));
                         pharmacy.setDescription(jsonObject.getString("city_name"));
                         pharmacy.setCity(jsonObject.getString("city_name"));
-                    //   pharmacy.setStudio(jsonObject.getString("phone_number"));
-
-//                        pharmacy.setRating(jsonObject.getString("Rating"));
-             //  pharmacy.setCategorie(jsonObject.getString("opening_time"));
-//                        pharmacy.setNb_episode(jsonObject.getInt("episode"));
-pharmacy.setStudio(jsonObject.getString("closing_time"));
+                        pharmacy.setRegion(jsonObject.getString("region_name"));
+                             pharmacy.setVacation(jsonObject.getString("vacation"));
+              pharmacy.setClosing(jsonObject.getString("closing_time"));
+                        pharmacy.setOpening(jsonObject.getString("opening_time"));
+                         pharmacy.setPhonenumer(jsonObject.getString("phone_number"));
                         pharmacy.setImage_url(jsonObject.getString("image"));
 
                         lstPharmacy.add(pharmacy);

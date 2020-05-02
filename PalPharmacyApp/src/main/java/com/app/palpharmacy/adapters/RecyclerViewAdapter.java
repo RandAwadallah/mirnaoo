@@ -18,12 +18,15 @@ import com.app.palpharmacy.model.Pharmacy;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> implements Filterable {
+TextView textView;
 
     RequestOptions option;
     private Context mContext;
@@ -53,11 +56,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 Intent i = new Intent(mContext, PharmacyDetailsActivity.class);
                 i.putExtra("anime_name", mData.get(viewHolder.getAdapterPosition()).getName());
+                i.putExtra("phone_number", mData.get(viewHolder.getAdapterPosition()).getPhonenumer());
                 i.putExtra("anime_description", mData.get(viewHolder.getAdapterPosition()).getDescription());
-               // i.putExtra("anime_studio", mData.get(viewHolder.getAdapterPosition()).getStudio());
+               i.putExtra("region_name", mData.get(viewHolder.getAdapterPosition()).getRegion());
                 i.putExtra("anime_city", mData.get(viewHolder.getAdapterPosition()).getCity());
-                i.putExtra("anime_nb_episode", mData.get(viewHolder.getAdapterPosition()).getNb_episode());
-             //   i.putExtra("anime_rating", mData.get(viewHolder.getAdapterPosition()).getRating());
+                i.putExtra("opening_time", mData.get(viewHolder.getAdapterPosition()).getOpening());
+                i.putExtra("closing_time", mData.get(viewHolder.getAdapterPosition()).getClosing());
+                i.putExtra("vacation", mData.get(viewHolder.getAdapterPosition()).getVacation());
                 i.putExtra("anime_img", mData.get(viewHolder.getAdapterPosition()).getImage_url());
 
                 mContext.startActivity(i);
@@ -74,11 +79,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.tv_name.setText(mDatafiltered.get(position).getName());
         holder.tv_city.setText(mDatafiltered.get(position).getCity());
-
+        Calendar calender = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm");
+        String dateTime =simpleDateFormat.format(Calendar.getInstance().getTime());
+        holder.tv_status.setText(dateTime);
        // holder.tv_rating.setText(mDatafiltered.get(position).getRating());
      //   holder.tv_studio.setText(mDatafiltered.get(position).getStudio());
       //  holder.tv_category.setText(mDatafiltered.get(position).getCategorie());
-
         // Load Image from the internet and set it into Imageview using Glide
 
         Glide.with(mContext).load(mData.get(position).getImage_url()).apply(option).into(holder.img_thumbnail);
@@ -128,24 +135,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_name;
-      //  TextView tv_rating;
-       // TextView tv_studio;
-       // TextView tv_category;
+       TextView tv_region;
+        TextView tv_opening;
+       TextView tv_vacation;
         ImageView img_thumbnail;
         TextView tv_city;
         LinearLayout view_container;
-
-
+        TextView tv_closing;
+TextView tv_status;
         public MyViewHolder(View itemView) {
             super(itemView);
 
             view_container = itemView.findViewById(R.id.container);
             tv_name = itemView.findViewById(R.id.anime_name);
             tv_city = itemView.findViewById(R.id.city);
-        // tv_rating = itemView.findViewById(R.id.rating);
-           // tv_studio = itemView.findViewById(R.id.studio);
+           tv_closing  = itemView.findViewById(R.id.closing);
+            tv_vacation=itemView.findViewById(R.id.vaction);
+            tv_region = itemView.findViewById(R.id.region);
+            tv_opening = itemView.findViewById(R.id.opening);
             img_thumbnail = itemView.findViewById(R.id.thumbnail);
-
+tv_status=itemView.findViewById(R.id.textView);
         }
     }
 

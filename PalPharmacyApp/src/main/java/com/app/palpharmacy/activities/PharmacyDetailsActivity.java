@@ -43,7 +43,7 @@ mapbutton.setOnClickListener(new View.OnClickListener() {
         openactivity();
     }
 });
-calltext= findViewById(R.id.aa_phone_number);
+calltext= findViewById(R.id.phone_number);
 callbutton=findViewById(R.id.phonebtn);
 callbutton.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -56,12 +56,12 @@ callbutton.setOnClickListener(new View.OnClickListener() {
 
         // Recieve data
 
-        //String description = getIntent().getExtras().getString("anime_description");
-        String studio = getIntent().getExtras().getString("aa_phone_number");
-        String category = getIntent().getExtras().getString("anime_name");
-        int nb_episode = getIntent().getExtras().getInt("anime_nb_episode");
-        //   String rating = getIntent().getExtras().getString("anime_rating");
-        // String image_url = getIntent().getExtras().getString("anime_img");
+
+        String phonenumber = getIntent().getExtras().getString("phone_number");
+        String vacation = getIntent().getExtras().getString("vacation");
+        String openinng = getIntent().getExtras().getString("opening_time");
+        String region = getIntent().getExtras().getString("region_name");
+         String closing = getIntent().getExtras().getString("closing_time");
         String name = getIntent().getExtras().getString("anime_name");
         String description = getIntent().getExtras().getString("anime_description");
         String city = getIntent().getExtras().getString("anime_city");
@@ -70,29 +70,30 @@ callbutton.setOnClickListener(new View.OnClickListener() {
 
         // ini views
 
+
         CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsingtoolbar_id);
         collapsingToolbarLayout.setTitleEnabled(true);
-//
-//        TextView tv_name = findViewById(R.id.aa_anime_name);
-        TextView tv_studio = findViewById(R.id.aa_vaction);
-        TextView tv_categorie = findViewById(R.id.aa_categorie);
+
+        TextView tv_number = findViewById(R.id.phone_number);
+      TextView tv_vacation = findViewById(R.id.vaction);
 //        TextView tv_description = findViewById(R.id.aa_description);
-//        TextView tv_rating = findViewById(R.id.aa_rating);
+       TextView tv_region = findViewById(R.id.region);
+        TextView tv_opening = findViewById(R.id.opening);
 //        ImageView img = findViewById(R.id.aa_thumbnail);
-        TextView tv_name = findViewById(R.id.aa_anime_name);
-        // TextView tv_city = findViewById(R.id.city);
-        TextView tv_description = findViewById(R.id.aa_city);
+        TextView tv_closing = findViewById(R.id.closing);
+        TextView tv_description = findViewById(R.id.city);
         ImageView img = findViewById(R.id.aa_thumbnail);
 
         // setting values to each view
 
         //  tv_name.setText(name);
-        tv_categorie.setText(category);
-        // tv_description.setText(description);
-        // tv_rating.setText(rating);
-        tv_studio.setText(studio);
-        tv_name.setText(name);
-//        tv_city.setText(city);
+       tv_vacation.setText(vacation);
+        tv_description.setText(description);
+         tv_region.setText(region);
+        tv_number.setText(phonenumber);
+
+        tv_opening.setText(openinng);
+   tv_closing.setText(closing);
         tv_description.setText(description);
 
         collapsingToolbarLayout.setTitle(name);

@@ -15,16 +15,18 @@
 
     <TextView
         android:id="@+id/textaboutus"
-        android:layout_width="364dp"
-        android:layout_height="471dp"
-        android:layout_marginStart="30dp"
+        android:layout_width="401dp"
+        android:layout_height="350dp"
+        android:layout_marginStart="10dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginBottom="88dp"
         android:gravity="fill_vertical|fill_horizontal"
-        android:text="Pal-Pharmacy is a complete system that helps pharmacists to promote for their pharmacy while providing the customers an easy and effective way to look for the nearest pharmacy based on their current location."
+        android:text="PalPharmacy is a leading online pharmacy information service that operates in Palestine.
+
+We seamlessly connect customers with their nearest pharmacies. It takes just few clicks from our platform to find the nearest open pharmacy to your location. Also it keeps you updated with any discounts these pharmacies provides."
         android:textColor="@color/black"
         android:textSize="20dp"
 
