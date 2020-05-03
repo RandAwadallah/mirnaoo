@@ -6,10 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.app.palpharmacy.R;
@@ -34,6 +37,7 @@ TextView textView;
     private List<Pharmacy> mDatafiltered;
 
     public RecyclerViewAdapter(Context mContext, List<Pharmacy> mData) {
+
         this.mContext = mContext;
         this.mData = mData;
         this.mDatafiltered=mData;
@@ -76,22 +80,28 @@ TextView textView;
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
+        holder.img_thumbnail.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_transition_animation));
+        holder.container.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_scale_animation));
 
         holder.tv_name.setText(mDatafiltered.get(position).getName());
         holder.tv_city.setText(mDatafiltered.get(position).getCity());
         Calendar calender = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, hh:mm");
         String dateTime =simpleDateFormat.format(Calendar.getInstance().getTime());
         holder.tv_status.setText(dateTime);
+
        // holder.tv_rating.setText(mDatafiltered.get(position).getRating());
      //   holder.tv_studio.setText(mDatafiltered.get(position).getStudio());
       //  holder.tv_category.setText(mDatafiltered.get(position).getCategorie());
+
+
+
         // Load Image from the internet and set it into Imageview using Glide
 
         Glide.with(mContext).load(mData.get(position).getImage_url()).apply(option).into(holder.img_thumbnail);
 
-
     }
+
 
     @Override
     public int getItemCount() {
@@ -141,11 +151,13 @@ TextView textView;
         ImageView img_thumbnail;
         TextView tv_city;
         LinearLayout view_container;
+        LinearLayout container;
         TextView tv_closing;
-TextView tv_status;
+
+        TextView tv_status;
         public MyViewHolder(View itemView) {
             super(itemView);
-
+            container = itemView.findViewById(R.id.container);
             view_container = itemView.findViewById(R.id.container);
             tv_name = itemView.findViewById(R.id.anime_name);
             tv_city = itemView.findViewById(R.id.city);

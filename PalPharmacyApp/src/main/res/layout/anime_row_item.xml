@@ -26,6 +26,7 @@
         android:orientation="vertical">
 
 
+
         <TextView
             android:id="@+id/anime_name"
             android:layout_width="wrap_content"
@@ -49,6 +50,11 @@
             android:layout_marginTop="5dp"
             android:text="Status"
             android:textColor="@color/colorGrey1"/>
+        <Button
+            android:id="@+id/custom_Button"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/close"/>
     </LinearLayout>
 
 

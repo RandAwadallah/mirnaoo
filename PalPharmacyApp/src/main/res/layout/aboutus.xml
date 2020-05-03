@@ -13,23 +13,45 @@
         android:layout_alignParentRight="true"
         android:src="@drawable/about" />
 
+
     <TextView
         android:id="@+id/textaboutus"
-        android:layout_width="401dp"
-        android:layout_height="350dp"
-        android:layout_marginStart="10dp"
+        android:layout_width="400dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="5dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginBottom="88dp"
         android:gravity="fill_vertical|fill_horizontal"
-        android:text="PalPharmacy is a leading online pharmacy information service that operates in Palestine.
-
-We seamlessly connect customers with their nearest pharmacies. It takes just few clicks from our platform to find the nearest open pharmacy to your location. Also it keeps you updated with any discounts these pharmacies provides."
+        android:text="PalPharmacy is a leading online pharmacy information service that operates in Palestine."
         android:textColor="@color/black"
+        android:shadowColor="@color/colorAccent"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:shadowRadius="10"
         android:textSize="20dp"
-
+        android:textStyle="bold|italic" />
+    <TextView
+        android:id="@+id/textAbout"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="88dp"
+        android:gravity="fill_vertical|fill_horizontal"
+        android:textColor="@color/black"
+        android:text="We seamlessly connect customers with their nearest pharmacies. It takes just few clicks from
+our platform to find the nearest open pharmacy to your location. Also it keeps you updated with any discounts these pharmacies provides."
+        android:shadowColor="@color/card_bg_dark_color"
+        android:shadowDx="15"
+        android:shadowDy="15"
+        android:shadowRadius="15"
+        android:textSize="20dp"
         android:textStyle="bold|italic" />
 
 
