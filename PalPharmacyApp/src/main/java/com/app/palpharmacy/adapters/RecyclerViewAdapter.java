@@ -67,6 +67,8 @@ TextView textView;
                 i.putExtra("opening_time", mData.get(viewHolder.getAdapterPosition()).getOpening());
                 i.putExtra("closing_time", mData.get(viewHolder.getAdapterPosition()).getClosing());
                 i.putExtra("vacation", mData.get(viewHolder.getAdapterPosition()).getVacation());
+                i.putExtra("longitude", mData.get(viewHolder.getAdapterPosition()).getLongitude());
+                i.putExtra("latitude", mData.get(viewHolder.getAdapterPosition()).getLatitude());
                 i.putExtra("anime_img", mData.get(viewHolder.getAdapterPosition()).getImage_url());
 
                 mContext.startActivity(i);
@@ -153,6 +155,8 @@ TextView textView;
         LinearLayout view_container;
         LinearLayout container;
         TextView tv_closing;
+        TextView tv_Long;
+        TextView tv_Lat;
 
         TextView tv_status;
         public MyViewHolder(View itemView) {
@@ -166,7 +170,10 @@ TextView textView;
             tv_region = itemView.findViewById(R.id.region);
             tv_opening = itemView.findViewById(R.id.opening);
             img_thumbnail = itemView.findViewById(R.id.thumbnail);
-tv_status=itemView.findViewById(R.id.textView);
+             tv_status=itemView.findViewById(R.id.textView);
+             tv_Long =itemView.findViewById(R.id.mapAPI);
+            tv_Lat =itemView.findViewById(R.id.mapAPI);
+
         }
     }
 

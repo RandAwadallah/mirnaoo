@@ -13,10 +13,17 @@ public class Pharmacy {
     private String phonenumer;
     private String image_url;
     private String city;
+    private String longitude;
+    private String latitude;
+
     public Pharmacy() {
     }
 
-    public Pharmacy(String name, String description, String city ,String opening,String region, String closing, String phone,String vacation, String image_url) {
+
+
+
+    public Pharmacy(String name, String description, String city , String opening, String region, String closing, String phone, String vacation,
+                    String image_url, String longitude, String latitude) {
         this.name = name;
         Description = description;
         this.region = region;
@@ -26,6 +33,8 @@ public class Pharmacy {
         this.image_url = image_url;
         this.city = city;
         this.vacation=vacation;
+        this.longitude = longitude;
+        this.latitude = latitude;
 
     }
 
@@ -36,6 +45,22 @@ public class Pharmacy {
     public void setVacation(String vacation) {
         this.vacation = vacation;
     }
+
+    public String getLongitude() { return longitude; }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+
+
     public String getName()
     {
         return name;

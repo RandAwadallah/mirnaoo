@@ -68,6 +68,9 @@ callbutton.setOnClickListener(new View.OnClickListener() {
         String image_url = getIntent().getExtras().getString("anime_img");
 
 
+
+
+
         // ini views
 
 
@@ -91,9 +94,8 @@ callbutton.setOnClickListener(new View.OnClickListener() {
         tv_description.setText(description);
          tv_region.setText(region);
         tv_number.setText(phonenumber);
-
         tv_opening.setText(openinng);
-   tv_closing.setText(closing);
+        tv_closing.setText(closing);
         tv_description.setText(description);
 
         collapsingToolbarLayout.setTitle(name);

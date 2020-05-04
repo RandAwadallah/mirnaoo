@@ -10,11 +10,20 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:title="@string/app_name"
+        app:title="Map"
         android:background="@color/colorBlue"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         tools:ignore="MissingConstraints" />
+
+    <fragment
+        android:layout_marginTop="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mapAPI"
+        android:name="com.google.android.gms.maps.SupportMapFragment">
+
+    </fragment>
 
 </android.support.constraint.ConstraintLayout>

@@ -98,11 +98,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         pharmacy.setDescription(jsonObject.getString("city_name"));
                         pharmacy.setCity(jsonObject.getString("city_name"));
                         pharmacy.setRegion(jsonObject.getString("region_name"));
-                             pharmacy.setVacation(jsonObject.getString("vacation"));
-              pharmacy.setClosing(jsonObject.getString("closing_time"));
+                        pharmacy.setVacation(jsonObject.getString("vacation"));
+                        pharmacy.setClosing(jsonObject.getString("closing_time"));
                         pharmacy.setOpening(jsonObject.getString("opening_time"));
                          pharmacy.setPhonenumer(jsonObject.getString("phone_number"));
                         pharmacy.setImage_url(jsonObject.getString("image"));
+                        pharmacy.setLongitude(jsonObject.getString("longitude"));
+                        pharmacy.setLatitude(jsonObject.getString("latitude"));
 
                         lstPharmacy.add(pharmacy);
 
