@@ -11,19 +11,14 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.palpharmacy.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-
-import org.w3c.dom.Text;
 
 public class PharmacyDetailsActivity extends AppCompatActivity {
     private static final int Request_Call=1;
@@ -33,7 +28,7 @@ public class PharmacyDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_anime);
+        setContentView(R.layout.activity_details);
 
 
         mapbutton=findViewById(R.id.buttonmap);
@@ -67,7 +62,7 @@ callbutton.setOnClickListener(new View.OnClickListener() {
         String city = getIntent().getExtras().getString("anime_city");
         String image_url = getIntent().getExtras().getString("anime_img");
 
-
+String insurance=getIntent().getExtras().getString("insurance");
 
 
 
@@ -86,6 +81,7 @@ callbutton.setOnClickListener(new View.OnClickListener() {
         TextView tv_closing = findViewById(R.id.closing);
         TextView tv_description = findViewById(R.id.city);
         ImageView img = findViewById(R.id.aa_thumbnail);
+        TextView tv_insurance = findViewById(R.id.insurance);
 
         // setting values to each view
 
@@ -97,6 +93,7 @@ callbutton.setOnClickListener(new View.OnClickListener() {
         tv_opening.setText(openinng);
         tv_closing.setText(closing);
         tv_description.setText(description);
+        tv_insurance.setText(description);
 
         collapsingToolbarLayout.setTitle(name);
         RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);

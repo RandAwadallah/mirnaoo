@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Anime Title"
-            android:textColor="@color/colorAccent"
+            android:textColor="#071CA6"
             android:textSize="18sp"
             android:textStyle="bold" />
         <TextView
@@ -50,11 +50,7 @@
             android:layout_marginTop="5dp"
             android:text="Status"
             android:textColor="@color/colorGrey1"/>
-        <Button
-            android:id="@+id/custom_Button"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/close"/>
+
     </LinearLayout>
 
 

@@ -7,12 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.app.palpharmacy.R;
@@ -27,20 +25,19 @@ import java.util.Calendar;
 import java.util.List;
 
 
-
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> implements Filterable {
-TextView textView;
+public class RVadapter extends RecyclerView.Adapter<RVadapter.MyViewHolder> implements Filterable {
+    TextView textView;
 
     RequestOptions option;
     private Context mContext;
     private List<Pharmacy> mData;
     private List<Pharmacy> mDatafiltered;
 
-    public RecyclerViewAdapter(Context mContext, List<Pharmacy> mData) {
+    public RVadapter(Context mContext, List<Pharmacy> mData) {
 
         this.mContext = mContext;
         this.mData = mData;
-        this.mDatafiltered=mData;
+        this.mDatafiltered = mData;
 
         // Request option for Glide
         option = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);
@@ -52,7 +49,7 @@ TextView textView;
 
         View view;
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        view = inflater.inflate(R.layout.anime_row_item, parent, false);
+        view = inflater.inflate(R.layout.details_row_item, parent, false);
         final MyViewHolder viewHolder = new MyViewHolder(view);
         viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +59,7 @@ TextView textView;
                 i.putExtra("anime_name", mData.get(viewHolder.getAdapterPosition()).getName());
                 i.putExtra("phone_number", mData.get(viewHolder.getAdapterPosition()).getPhonenumer());
                 i.putExtra("anime_description", mData.get(viewHolder.getAdapterPosition()).getDescription());
-               i.putExtra("region_name", mData.get(viewHolder.getAdapterPosition()).getRegion());
+                i.putExtra("region_name", mData.get(viewHolder.getAdapterPosition()).getRegion());
                 i.putExtra("anime_city", mData.get(viewHolder.getAdapterPosition()).getCity());
                 i.putExtra("opening_time", mData.get(viewHolder.getAdapterPosition()).getOpening());
                 i.putExtra("closing_time", mData.get(viewHolder.getAdapterPosition()).getClosing());
@@ -70,6 +67,9 @@ TextView textView;
                 i.putExtra("longitude", mData.get(viewHolder.getAdapterPosition()).getLongitude());
                 i.putExtra("latitude", mData.get(viewHolder.getAdapterPosition()).getLatitude());
                 i.putExtra("anime_img", mData.get(viewHolder.getAdapterPosition()).getImage_url());
+                i.putExtra("latitude", mData.get(viewHolder.getAdapterPosition()).getLatitude());
+                i.putExtra("longitude", mData.get(viewHolder.getAdapterPosition()).getLongitude());
+                i.putExtra("insurance", mData.get(viewHolder.getAdapterPosition()).getInsurance());
 
                 mContext.startActivity(i);
 
@@ -82,23 +82,16 @@ TextView textView;
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.img_thumbnail.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_transition_animation));
-        holder.container.setAnimation(AnimationUtils.loadAnimation(mContext,R.anim.fade_scale_animation));
+        holder.img_thumbnail.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_transition_animation));
+        holder.container.setAnimation(AnimationUtils.loadAnimation(mContext, R.anim.fade_scale_animation));
 
         holder.tv_name.setText(mDatafiltered.get(position).getName());
         holder.tv_city.setText(mDatafiltered.get(position).getCity());
         Calendar calender = Calendar.getInstance();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, hh:mm");
-        String dateTime =simpleDateFormat.format(Calendar.getInstance().getTime());
+        String dateTime = simpleDateFormat.format(Calendar.getInstance().getTime());
         holder.tv_status.setText(dateTime);
 
-       // holder.tv_rating.setText(mDatafiltered.get(position).getRating());
-     //   holder.tv_studio.setText(mDatafiltered.get(position).getStudio());
-      //  holder.tv_category.setText(mDatafiltered.get(position).getCategorie());
-
-
-
-        // Load Image from the internet and set it into Imageview using Glide
 
         Glide.with(mContext).load(mData.get(position).getImage_url()).apply(option).into(holder.img_thumbnail);
 
@@ -115,21 +108,26 @@ TextView textView;
         return new Filter() {
             @Override
             protected FilterResults performFiltering(CharSequence constraint) {
-                String Key= constraint.toString();
-                if(Key.isEmpty()) {
-                    mDatafiltered= mData;
-                }
-                else{
+                String Key = constraint.toString();
+                if (Key.isEmpty()) {
+                    mDatafiltered = mData;
+                } else {
                     List<Pharmacy> lstfiltered = new ArrayList<>();
-                    for(Pharmacy row : mData) {
+                    for (Pharmacy row : mData) {
                         if (row.getName().toLowerCase().contains(Key.toLowerCase())) {
                             lstfiltered.add(row);
+                        } else {
+                            if (row.getCity().toLowerCase().contains(Key.toLowerCase())) {
+                                lstfiltered.add(row);
+                            }
                         }
+
                     }
-                    mDatafiltered= lstfiltered;
+
+                    mDatafiltered = lstfiltered;
                 }
                 FilterResults filterResults = new FilterResults();
-                filterResults.values=mDatafiltered;
+                filterResults.values = mDatafiltered;
                 return filterResults;
             }
 
@@ -138,8 +136,6 @@ TextView textView;
                 mDatafiltered = (List<Pharmacy>) results.values;
                 notifyDataSetChanged();
 
-
-
             }
         };
     }
@@ -147,9 +143,9 @@ TextView textView;
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_name;
-       TextView tv_region;
+        TextView tv_region;
         TextView tv_opening;
-       TextView tv_vacation;
+        TextView tv_vacation;
         ImageView img_thumbnail;
         TextView tv_city;
         LinearLayout view_container;
@@ -157,22 +153,25 @@ TextView textView;
         TextView tv_closing;
         TextView tv_Long;
         TextView tv_Lat;
+        TextView tv_insurance;
 
         TextView tv_status;
+
         public MyViewHolder(View itemView) {
             super(itemView);
             container = itemView.findViewById(R.id.container);
             view_container = itemView.findViewById(R.id.container);
             tv_name = itemView.findViewById(R.id.anime_name);
             tv_city = itemView.findViewById(R.id.city);
-           tv_closing  = itemView.findViewById(R.id.closing);
-            tv_vacation=itemView.findViewById(R.id.vaction);
+            tv_closing = itemView.findViewById(R.id.closing);
+            tv_vacation = itemView.findViewById(R.id.vaction);
             tv_region = itemView.findViewById(R.id.region);
             tv_opening = itemView.findViewById(R.id.opening);
             img_thumbnail = itemView.findViewById(R.id.thumbnail);
-             tv_status=itemView.findViewById(R.id.textView);
-             tv_Long =itemView.findViewById(R.id.mapAPI);
-            tv_Lat =itemView.findViewById(R.id.mapAPI);
+            tv_status = itemView.findViewById(R.id.textView);
+            tv_Long = itemView.findViewById(R.id.mapAPI);
+            tv_Lat = itemView.findViewById(R.id.mapAPI);
+            tv_insurance = itemView.findViewById(R.id.insurance);
 
         }
     }

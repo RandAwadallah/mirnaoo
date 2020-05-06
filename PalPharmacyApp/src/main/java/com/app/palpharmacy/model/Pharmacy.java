@@ -15,17 +15,18 @@ public class Pharmacy {
     private String city;
     private String longitude;
     private String latitude;
+    private String Insurance;
 
     public Pharmacy() {
     }
 
 
 
-
     public Pharmacy(String name, String description, String city , String opening, String region, String closing, String phone, String vacation,
-                    String image_url, String longitude, String latitude) {
+                    String image_url, String longitude, String latitude, String insurance) {
         this.name = name;
         Description = description;
+        this.Insurance=insurance;
         this.region = region;
         this.opening = opening;
         this.closing = closing;
@@ -124,5 +125,13 @@ public class Pharmacy {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public String getInsurance() {
+        return Insurance;
+    }
+
+    public void setInsurance(String insurance) {
+        Insurance = insurance;
     }
 }

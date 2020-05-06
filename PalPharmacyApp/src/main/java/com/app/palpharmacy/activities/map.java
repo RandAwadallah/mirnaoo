@@ -16,27 +16,44 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class map extends FragmentActivity implements OnMapReadyCallback {
     GoogleMap mapAPI;
     SupportMapFragment mapFragment;
+    private String ltd,lng;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-       // String longitude = getIntent().getExtras().getString("longitude");
-      //  String latitude = getIntent().getExtras().getString("latitude");
-      //  TextView tv_Long = findViewById(R.id.mapAPI);
-      //  TextView tv_Lat = findViewById(R.id.mapAPI);
-     //   tv_Long.setText(longitude);
-      //  tv_Lat.setText(latitude);
-     //   getSupportActionBar().hide();
+        ltd = getIntent().getExtras().getString("latitude");
+        lng = getIntent().getExtras().getString("longitude");
+
+        if(isNullOrEmpty(ltd)){
+            ltd = "32.217086";
+            // ltd = "34";
+        }
+        if(isNullOrEmpty(lng)){
+            lng ="35.271603";
+            // lng = "151";
+        }
+
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapAPI);
         mapFragment.getMapAsync(this);
     }
+    public static boolean isNullOrEmpty(String str) {
+        if(str != null && !str.isEmpty())
+            return false;
+        return true;
+    }
+
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mapAPI = googleMap;
-        LatLng BethlehemUniversity  = new LatLng(31.952162, 35.233154);
+        double x = Double.parseDouble(ltd);
+
+        double y = Double.parseDouble(lng);
+        LatLng BethlehemUniversity  = new LatLng(x, y);
         mapAPI.addMarker(new MarkerOptions().position(BethlehemUniversity).title("BethlehemUniversity"));
-        mapAPI.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
+       // mapAPI.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
         mapAPI.moveCamera(CameraUpdateFactory.newLatLng(BethlehemUniversity));
        // mapAPI.animateCamera(CameraUpdateFactory.newLatLngZoom(BethlehemUniversity,18),10,null);
 

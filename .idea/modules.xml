@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/MyApplication5-master-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/MyApplication5-master-PalPharmacyApp.iml" group="MyApplication5-master/PalPharmacyApp" />
       <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/PalPharmacyApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/StudioProjects-MyApplication5-master.iml" filepath="$PROJECT_DIR$/StudioProjects-MyApplication5-master.iml" group="MyApplication5-master" />
+      <module fileurl="file://$PROJECT_DIR$/mi.iml" filepath="$PROJECT_DIR$/mi.iml" group="mi" />
+      <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/mi-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/mi-PalPharmacyApp.iml" group="mi/PalPharmacyApp" />
       <module fileurl="file://$PROJECT_DIR$/mirnao.iml" filepath="$PROJECT_DIR$/mirnao.iml" group="mirnao" />
       <module fileurl="file://$PROJECT_DIR$/PalPharmacyApp/mirnao-PalPharmacyApp.iml" filepath="$PROJECT_DIR$/PalPharmacyApp/mirnao-PalPharmacyApp.iml" group="mirnao/PalPharmacyApp" />
       <module fileurl="file://$PROJECT_DIR$/mirnaoo.iml" filepath="$PROJECT_DIR$/mirnaoo.iml" group="mirnaoo" />

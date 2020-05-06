@@ -1,6 +1,7 @@
 package com.app.palpharmacy.activities;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,7 +27,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.app.palpharmacy.R;
-import com.app.palpharmacy.adapters.RecyclerViewAdapter;
+import com.app.palpharmacy.adapters.RVadapter;
 import com.app.palpharmacy.model.Pharmacy;
 
 import org.json.JSONArray;
@@ -42,14 +43,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private RequestQueue requestQueue;
     private List<Pharmacy> lstPharmacy;
     private RecyclerView recyclerView;
+    private static int splash=5000;
     Button buttonSend;
     List<Pharmacy> mData;
     private DrawerLayout drawer;
-    RecyclerViewAdapter myadapter;
+    RVadapter myadapter;
     EditText searchinput;
     private EditText mEditTextTo;
     private EditText mEditTextSubject;
     private EditText mEditTextMessage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +62,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.draw_layout);
+
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+        navigationView.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+        toolbar.setBackgroundResource(R.drawable.gradient);
         navigationView.setNavigationItemSelectedListener(this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -101,11 +108,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         pharmacy.setVacation(jsonObject.getString("vacation"));
                         pharmacy.setClosing(jsonObject.getString("closing_time"));
                         pharmacy.setOpening(jsonObject.getString("opening_time"));
-                         pharmacy.setPhonenumer(jsonObject.getString("phone_number"));
+                        pharmacy.setPhonenumer(jsonObject.getString("phone_number"));
                         pharmacy.setImage_url(jsonObject.getString("image"));
                         pharmacy.setLongitude(jsonObject.getString("longitude"));
                         pharmacy.setLatitude(jsonObject.getString("latitude"));
-
+                        pharmacy.setInsurance(jsonObject.getString("insurance"));
                         lstPharmacy.add(pharmacy);
 
                     } catch (JSONException e) {
@@ -152,7 +159,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void setuprecyclerview(List<Pharmacy> lstPharmacy) {
 
 
-        myadapter = new RecyclerViewAdapter(this, lstPharmacy);
+        myadapter = new RVadapter(this, lstPharmacy);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myadapter);
@@ -199,12 +206,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         intent.putExtra(Intent.EXTRA_TEXT, message);
 
         intent.setType("message/rfc822");
-    startActivity(Intent.createChooser(intent, "Choose an email client"));
+        startActivity(Intent.createChooser(intent, "Choose an email client"));
     }
 
     public void viewdata(View view) {
         sendMail();
-        Toast.makeText(this,"buttonclick",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "buttonclick", Toast.LENGTH_SHORT).show();
     }
 }
 

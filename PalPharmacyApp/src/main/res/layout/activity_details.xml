@@ -18,7 +18,7 @@
             android:id="@+id/collapsingtoolbar_id"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorAccent"
+            android:background="@drawable/gradient"
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="20dp"
             app:layout_scrollFlags="exitUntilCollapsed|scroll"
@@ -257,42 +257,68 @@
 
     </TextView>
 
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    <TextView
+        android:id="@+id/insurancedef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/closing"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:text="Insurance Companies:"
+        android:drawableLeft="@drawable/ic_offline_pin_black_24dp"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textSize="14dp">
 
+    </TextView>
 
-    </android.support.v4.widget.NestedScrollView>
+    <TextView
+        android:id="@+id/insurance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/closing"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="188dp"
+        android:text="Insurance Companies:"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:textColor="@color/colorGrey1"
+        android:textSize="14dp">
+
+    </TextView>
 
     <Button
         android:id="@+id/phonebtn"
+
         android:layout_width="170dp"
         android:gravity="center"
         android:layout_height="57dp"
         android:layout_below="@id/phone_number"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="120dp"
-        android:background="@color/colorAccent"
+        android:layout_marginTop="140dp"
         android:text="Call now"
+        android:background="@drawable/gradient"
+
         android:textStyle="bold"
         android:textSize="16dp"
         android:textColor="#FFFFFF">
     </Button>
 
-<Button
-    android:id="@+id/buttonmap"
-    android:textStyle="bold"
-    android:layout_width="170dp"
-    android:layout_height="57dp"
-    android:text="View Map"
-    android:textSize="16dp"
-    android:background="@color/colorAccent"
-    android:layout_marginTop="120dp"
-    android:textColor="#FFFFFF"
-    android:layout_marginLeft="210dp"
-    android:layout_below="@id/phone_number">
-</Button>
+    <Button
+        android:id="@+id/buttonmap"
+        android:layout_width="170dp"
+        android:layout_height="57dp"
+        android:layout_below="@id/phone_number"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/gradient"
+        android:text="View On Map"
+        android:textColor="#FFFFFF"
+        android:textSize="16dp"
+        android:textStyle="bold">
+
+    </Button>
 
 </RelativeLayout>

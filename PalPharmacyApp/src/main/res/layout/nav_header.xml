@@ -3,26 +3,28 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="176dp"
-    android:background="@color/colorGrey"
+    android:background="#FFFFFF"
     android:gravity="bottom"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     >
 
 
- <ImageView
-        android:layout_width="91dp"
-        android:layout_height="89dp"
-
-    />
-
+    <ImageView
+        android:layout_width="220dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/logoo"
+        />
     <TextView
-        android:layout_width="173dp"
-        android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:text="Pal-Pharmacy"
+        android:layout_width="278dp"
+        android:layout_height="22dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="1dp"
+        android:text="ALWAYS THERE TO CARE"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@color/colorPrimary"
-        android:textSize="25dp"
+        android:textColor="#122778"
+        android:textSize="20dp"
         android:textStyle="bold|italic" />
 </LinearLayout>
