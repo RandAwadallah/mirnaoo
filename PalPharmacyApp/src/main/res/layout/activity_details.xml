@@ -20,7 +20,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/gradient"
             app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="20dp"
+            app:expandedTitleMarginStart="10dp"
             app:layout_scrollFlags="exitUntilCollapsed|scroll"
             app:title="Anime Title"
             >

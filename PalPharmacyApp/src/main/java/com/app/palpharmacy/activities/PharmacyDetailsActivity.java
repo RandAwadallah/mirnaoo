@@ -23,6 +23,8 @@ import com.bumptech.glide.request.RequestOptions;
 public class PharmacyDetailsActivity extends AppCompatActivity {
     private static final int Request_Call=1;
     private TextView calltext;
+    private String lng;
+    private String ltd;
     private Button callbutton;
     private Button mapbutton;
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +63,8 @@ callbutton.setOnClickListener(new View.OnClickListener() {
         String description = getIntent().getExtras().getString("anime_description");
         String city = getIntent().getExtras().getString("anime_city");
         String image_url = getIntent().getExtras().getString("anime_img");
-
+        ltd = getIntent().getExtras().getString("latitude");
+        lng = getIntent().getExtras().getString("longitude");
 String insurance=getIntent().getExtras().getString("insurance");
 
 
@@ -93,7 +96,7 @@ String insurance=getIntent().getExtras().getString("insurance");
         tv_opening.setText(openinng);
         tv_closing.setText(closing);
         tv_description.setText(description);
-        tv_insurance.setText(description);
+        tv_insurance.setText(insurance);
 
         collapsingToolbarLayout.setTitle(name);
         RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading_shape).error(R.drawable.loading_shape);
@@ -128,8 +131,10 @@ String insurance=getIntent().getExtras().getString("insurance");
         }
     }
     public void openactivity(){
-    Intent intent = new Intent(this,map.class);
-    startActivity(intent);
+        Intent intent = new Intent(this,map.class);
+        intent.putExtra("longitude",lng);
+        intent.putExtra("latitude",ltd);
+        startActivity(intent);
     }
 
 }

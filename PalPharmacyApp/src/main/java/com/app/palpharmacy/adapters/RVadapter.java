@@ -67,8 +67,7 @@ public class RVadapter extends RecyclerView.Adapter<RVadapter.MyViewHolder> impl
                 i.putExtra("longitude", mData.get(viewHolder.getAdapterPosition()).getLongitude());
                 i.putExtra("latitude", mData.get(viewHolder.getAdapterPosition()).getLatitude());
                 i.putExtra("anime_img", mData.get(viewHolder.getAdapterPosition()).getImage_url());
-                i.putExtra("latitude", mData.get(viewHolder.getAdapterPosition()).getLatitude());
-                i.putExtra("longitude", mData.get(viewHolder.getAdapterPosition()).getLongitude());
+
                 i.putExtra("insurance", mData.get(viewHolder.getAdapterPosition()).getInsurance());
 
                 mContext.startActivity(i);

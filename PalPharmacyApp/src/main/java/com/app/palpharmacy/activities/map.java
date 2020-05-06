@@ -27,11 +27,9 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
 
         if(isNullOrEmpty(ltd)){
             ltd = "32.217086";
-            // ltd = "34";
         }
         if(isNullOrEmpty(lng)){
             lng ="35.271603";
-            // lng = "151";
         }
 
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapAPI);
@@ -53,7 +51,6 @@ public class map extends FragmentActivity implements OnMapReadyCallback {
         double y = Double.parseDouble(lng);
         LatLng BethlehemUniversity  = new LatLng(x, y);
         mapAPI.addMarker(new MarkerOptions().position(BethlehemUniversity).title("BethlehemUniversity"));
-       // mapAPI.animateCamera(CameraUpdateFactory.zoomTo(15.0f));
         mapAPI.moveCamera(CameraUpdateFactory.newLatLng(BethlehemUniversity));
        // mapAPI.animateCamera(CameraUpdateFactory.newLatLngZoom(BethlehemUniversity,18),10,null);
 

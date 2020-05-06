@@ -38,12 +38,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private final String JSON_URL = "http://www.palpharmacy.com/index.php/getPharmacies";
+    private final String JSON_URL = "http://www.palpharmacy.com/getPharmacies";
     private JsonArrayRequest request;
     private RequestQueue requestQueue;
     private List<Pharmacy> lstPharmacy;
     private RecyclerView recyclerView;
-    private static int splash=5000;
     Button buttonSend;
     List<Pharmacy> mData;
     private DrawerLayout drawer;
