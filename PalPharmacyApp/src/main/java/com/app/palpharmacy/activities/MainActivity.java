@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private final String JSON_URL = "http://www.palpharmacy.com/getPharmacies";
+    private final String JSON_URL = "https://www.palpharmacy.com/getPharmacies";
     private JsonArrayRequest request;
     private RequestQueue requestQueue;
     private List<Pharmacy> lstPharmacy;
@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         pharmacy.setLatitude(jsonObject.getString("latitude"));
                         pharmacy.setInsurance(jsonObject.getString("insurance"));
                         lstPharmacy.add(pharmacy);
+
 
                     } catch (JSONException e) {
                         e.printStackTrace();

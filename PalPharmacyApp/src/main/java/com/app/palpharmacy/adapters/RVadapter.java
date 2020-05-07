@@ -32,6 +32,10 @@ public class RVadapter extends RecyclerView.Adapter<RVadapter.MyViewHolder> impl
     private Context mContext;
     private List<Pharmacy> mData;
     private List<Pharmacy> mDatafiltered;
+    String day;
+    String opntime;
+    String clsetime;
+
 
     public RVadapter(Context mContext, List<Pharmacy> mData) {
 
@@ -72,6 +76,8 @@ public class RVadapter extends RecyclerView.Adapter<RVadapter.MyViewHolder> impl
 
                 mContext.startActivity(i);
 
+
+
             }
         });
 
@@ -88,8 +94,36 @@ public class RVadapter extends RecyclerView.Adapter<RVadapter.MyViewHolder> impl
         holder.tv_city.setText(mDatafiltered.get(position).getCity());
         Calendar calender = Calendar.getInstance();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEE, hh:mm");
+        SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("hh:mm");
+        SimpleDateFormat simpleDateFormat3 = new SimpleDateFormat("EEE");
+
+
         String dateTime = simpleDateFormat.format(Calendar.getInstance().getTime());
-        holder.tv_status.setText(dateTime);
+        String time = simpleDateFormat2.format(Calendar.getInstance().getTime());
+        String today = simpleDateFormat3.format(Calendar.getInstance().getTime());
+         String day = mData.get(holder.getAdapterPosition()).getVacation().substring(0,3);
+          String opntime =  mData.get(holder.getAdapterPosition()).getOpening();
+         String clsetime =  mData.get(holder.getAdapterPosition()).getClosing();
+
+//        holder.tv_status.setText(dateTime);
+//        holder.tv_status.setText(time);
+      //  holder.tv_status.setText(opntime);
+
+        if (today.toLowerCase().equals(day.toLowerCase()))
+            holder.tv_status.setText("Close");
+        else  {
+
+            if (time.compareTo(opntime)>0 && time.compareTo(clsetime)<0)
+
+            holder.tv_status.setText("Open");
+            else
+                holder.tv_status.setText("Close");}
+
+
+
+
+
+
 
 
         Glide.with(mContext).load(mData.get(position).getImage_url()).apply(option).into(holder.img_thumbnail);
